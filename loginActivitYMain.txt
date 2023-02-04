@@ -1,0 +1,34 @@
+package com.example.loginbasico
+
+import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
+import android.widget.Button
+import android.widget.Toast
+import com.example.loginbasico.databinding.ActivityMainBinding
+import com.google.android.material.textfield.TextInputEditText
+
+class MainActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityMainBinding
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        val usuario = findViewById<TextInputEditText>(R.id.usuario)
+        val contraseña = findViewById<TextInputEditText>(R.id.contrasena)
+        val boton = findViewById<Button>(R.id.loginButton)
+        boton.setOnClickListener {
+            val textoUsuario = usuario.text.toString()
+            val textoContraseña = contraseña.text.toString()
+
+            binding.usuario.text?.clear()
+            binding.contrasena.text?.clear()
+        }
+    }
+
+}
+
+
+
+
